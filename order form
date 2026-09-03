@@ -1,0 +1,1949 @@
+<script>
+
+    window.tailwind = { 
+
+        config: { 
+
+            corePlugins: { preflight: false },
+
+            important: '#sweet-menu-wrapper'
+
+        } 
+
+    };
+
+</script>
+
+
+
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<!-- Google reCAPTCHA v2 -->
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+
+
+
+<style>
+
+    /* --- SQUARESPACE OVERRIDES --- */
+
+    footer, #footer, #footer-sections, .Footer, .footer-wrapper {
+
+        display: none !important;
+
+        visibility: hidden !important;
+
+        height: 0 !important;
+
+    }
+
+
+
+
+    #custom-bakery-form-wrapper *, 
+
+    #custom-bakery-form-wrapper ::before, 
+
+    #custom-bakery-form-wrapper ::after {
+
+        box-sizing: border-box;
+
+        border-width: 0; 
+
+        border-style: solid;
+
+        border-color: #e5e7eb;
+
+    }
+
+    
+
+    #custom-bakery-form-wrapper input:not([type="hidden"]), 
+
+    #custom-bakery-form-wrapper select, 
+
+    #custom-bakery-form-wrapper textarea {
+
+        background-color: #fff;
+
+        margin: 0;
+
+        border-width: 1px !important;
+
+        border-color: #d1d5db !important; 
+
+    }
+
+
+
+
+    .reveal-section {
+
+        display: none;
+
+        opacity: 0;
+
+        transition: opacity 0.3s ease-in-out;
+
+    }
+
+    .reveal-section.active {
+
+        display: block;
+
+        opacity: 1;
+
+        animation: slideDown 0.4s ease-out forwards;
+
+    }
+
+    @keyframes slideDown {
+
+        from { transform: translateY(-10px); opacity: 0; }
+
+        to { transform: translateY(0); opacity: 1; }
+
+    }
+
+    
+
+    /* Elegant Checkbox Styling utilizing Brand Accents */
+
+    .custom-checkbox:checked + div {
+
+        border-color: #4e8ea1 !important; /* Blue Accent Border */
+
+        background-color: #fdf2f0 !important; /* Soft Peach Background */
+
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+
+        border-width: 2px !important;
+
+    }
+
+    input[type=number]::-webkit-inner-spin-button, 
+
+    input[type=number]::-webkit-outer-spin-button {  
+
+        opacity: 1;
+
+    }
+
+    
+
+    #custom-bakery-form-wrapper {
+
+        overflow-x: hidden;
+
+        max-width: 100%;
+
+    }
+
+    #recaptcha-wrapper {
+
+        display: flex;
+
+        justify-content: center;
+
+        margin: 24px 0 12px;
+
+    }
+
+    #captcha-error {
+
+        display: none;
+
+        color: #b91c1c;
+
+        font-weight: bold;
+
+        margin: 0 0 18px;
+
+    }
+
+    #date-error {
+
+        display: none;
+
+        color: #b91c1c;
+
+        font-weight: bold;
+
+        margin: 8px 0 0;
+
+        font-size: 0.875rem;
+
+    }
+
+    #cust-date.date-invalid {
+
+        border-color: #b91c1c !important;
+
+    }
+
+    @media only screen and (max-width: 340px) {
+
+        #recaptcha-wrapper {
+
+            height: 66px;
+
+        }
+
+        #recaptcha-wrapper .g-recaptcha {
+
+            transform: scale(0.84);
+
+            transform-origin: center top;
+
+        }
+
+    }
+
+</style>
+
+
+
+
+<div id="custom-bakery-form-wrapper" class="bg-transparent font-sans text-gray-800 py-8 px-2 sm:px-6 lg:px-8 w-full">
+
+
+
+
+    <form id="orderForm" action="https://script.google.com/macros/s/AKfycbxYIQT5s4OyM3bSbbNoeAZB4Zqj9qoK3eGla-qClRWLQqQ_ANH4ObERlNptWSV5b-yb/exec" method="POST">
+
+    <div class="max-w-4xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100" id="bakery-form">
+
+        
+
+        <div class="bg-[#fdf2f0] p-8 text-center border-b border-gray-200">
+
+            <h1 class="text-3xl md:text-4xl font-bold font-serif mb-2 text-[#852c51]" style="margin:0;">Sweet Elizabeth's Organics</h1>
+
+            <p class="text-[#4e8ea1] font-bold text-lg uppercase tracking-wider text-sm" style="margin:0;">Online Order Request Form</p>
+
+        </div>
+
+
+
+
+        <div class="p-6 md:p-10 bg-white border-b border-gray-200 text-sm text-gray-700 leading-relaxed">
+
+            <p class="mb-3 text-lg text-center text-[#852c51]" style="margin-top:0;"><strong>Thank you for choosing to order with us!</strong> We are so excited to bake for you.</p>
+
+            
+
+            <div class="text-center mb-4">
+
+                <a href="https://www.sweetelizabethsorganics.com/menu" target="_blank" class="inline-block bg-[#4e8ea1] text-white font-bold py-2 px-4 rounded-full hover:bg-opacity-80 transition shadow-sm" style="text-decoration:none;">
+
+                    <i class="fas fa-book-open mr-2"></i>Click here to view our Menu & Pricing
+
+                </a>
+
+            </div>
+
+
+
+
+            <div class="bg-white p-4 rounded-lg border border-gray-200 mb-4 shadow-sm" style="border-width: 1px !important;">
+
+                <h4 class="font-bold text-[#852c51] mb-1" style="margin-top:0;"><i class="fas fa-truck mr-2"></i>Pickup & Shipping Information</h4>
+
+                <p style="margin:0;">Standard orders are for <strong>in-store pickup</strong>. However, shipping is available! Shipped bakery items will be frozen and sent via overnight delivery to ensure freshness.</p>
+
+            </div>
+
+
+
+
+            <p style="margin:0;">Please note that your order is not confirmed until you receive a notification that it has been accepted. Please permit <strong>2 business days</strong> for us to confirm your order. If you need something sooner, please call our store at <a href="tel:7193587659" class="text-[#852c51] font-bold hover:underline">(719) 358-7659</a>.</p>
+
+        </div>
+
+
+
+
+        <div class="p-6 md:p-10 space-y-8">
+
+
+
+
+            <section class="pb-8 border-b border-gray-200" style="border-bottom-width: 1px !important;">
+
+                <h2 class="text-2xl font-bold mb-4 text-[#852c51]" style="margin-top:0;"><i class="fas fa-user-circle text-[#4e8ea1] mr-2"></i>1. Your Information</h2>
+
+                
+
+                <div style="display:none !important; visibility:hidden !important; overflow:hidden !important; position:absolute; left:-9999px; width:0 !important; height:0 !important;">
+
+                    <label for="spam-honeypot">If you are human, leave this completely blank:</label>
+
+                    <input type="text" id="spam-honeypot" name="website_url" autocomplete="off" tabindex="-1">
+
+                    <input type="hidden" id="form-load-time" name="form_load_time">
+
+                </div>
+
+
+
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+                    <div>
+
+                        <label class="block text-sm font-semibold mb-1 text-gray-600">First & Last Name</label>
+
+                        <input type="text" id="cust-name" name="Customer Name" class="w-full rounded-lg p-3 outline-none focus:border-[#4e8ea1] focus:ring-1 focus:ring-[#4e8ea1]" required>
+
+                    </div>
+
+                    <div>
+
+                        <label class="block text-sm font-semibold mb-1 text-gray-600">Phone Number</label>
+
+                        <input type="tel" id="cust-phone" name="Phone Number" class="w-full rounded-lg p-3 outline-none focus:border-[#4e8ea1] focus:ring-1 focus:ring-[#4e8ea1]" required>
+
+                    </div>
+
+                    <div>
+
+                        <label class="block text-sm font-semibold mb-1 text-gray-600">Email Address</label>
+
+                        <input type="email" id="cust-email" name="Email" class="w-full rounded-lg p-3 outline-none focus:border-[#4e8ea1] focus:ring-1 focus:ring-[#4e8ea1]" required>
+
+                    </div>
+
+                    <div>
+
+                        <label class="block text-sm font-semibold mb-1 text-gray-600">Requested Pickup/Ship Date -2 day notice-</label>
+
+                        <input type="date" id="cust-date" name="Pickup Date" class="w-full rounded-lg p-3 outline-none focus:border-[#4e8ea1] focus:ring-1 focus:ring-[#4e8ea1]" required>
+
+                        <p id="date-error" role="alert" aria-live="polite"></p>
+
+                    </div>
+
+                    <div>
+
+                        <label class="block text-sm font-semibold mb-1 text-gray-600">Estimated Pickup Time</label>
+
+                        <input type="time" id="cust-time" name="Pickup Time" class="w-full rounded-lg p-3 outline-none focus:border-[#4e8ea1] focus:ring-1 focus:ring-[#4e8ea1]">
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+
+            <section class="pb-8 border-b border-gray-200" style="border-bottom-width: 1px !important;">
+
+                <h2 class="text-2xl font-bold mb-4 text-[#852c51]" style="margin-top:0;"><i class="fas fa-store text-[#4e8ea1] mr-2"></i>2. What are we baking for you?</h2>
+
+                <p class="text-sm text-gray-500 mb-4" style="margin:0;">Select all categories that apply. The menus will open below.</p>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+
+                    <label class="cursor-pointer relative">
+
+                        <input type="checkbox" id="cat-pastries" class="custom-checkbox opacity-0 absolute w-0 h-0 -z-10" onchange="toggleSection('section-pastries', this.checked)">
+
+                        <div class="rounded-xl p-4 flex items-center transition-all duration-200" style="border-width: 2px !important; border-color: #e5e7eb !important;">
+
+                            <i class="fas fa-cookie text-2xl text-[#852c51] mr-3"></i>
+
+                            <span class="font-bold text-gray-700">Pastries & Cookies</span>
+
+                        </div>
+
+                    </label>
+
+                    <label class="cursor-pointer relative">
+
+                        <input type="checkbox" id="cat-cakes" class="custom-checkbox opacity-0 absolute w-0 h-0 -z-10" onchange="toggleSection('section-cakes', this.checked)">
+
+                        <div class="rounded-xl p-4 flex items-center transition-all duration-200" style="border-width: 2px !important; border-color: #e5e7eb !important;">
+
+                            <i class="fas fa-birthday-cake text-2xl text-[#852c51] mr-3"></i>
+
+                            <span class="font-bold text-gray-700">Custom Cakes</span>
+
+                        </div>
+
+                    </label>
+
+                    <label class="cursor-pointer relative">
+
+                        <input type="checkbox" id="cat-breads" class="custom-checkbox opacity-0 absolute w-0 h-0 -z-10" onchange="toggleSection('section-breads', this.checked)">
+
+                        <div class="rounded-xl p-4 flex items-center transition-all duration-200" style="border-width: 2px !important; border-color: #e5e7eb !important;">
+
+                            <i class="fas fa-bread-slice text-2xl text-[#852c51] mr-3"></i>
+
+                            <span class="font-bold text-gray-700">Breads & Bagels</span>
+
+                        </div>
+
+                    </label>
+
+                </div>
+
+            </section>
+
+
+
+
+            <div id="section-pastries" class="reveal-section bg-gray-50 p-6 rounded-xl border border-gray-100" style="border-width: 1px !important;">
+
+                <h3 class="text-xl font-bold mb-4 text-[#852c51] border-gray-200 pb-2" style="margin-top:0; border-bottom-width: 1px !important;">Pastries & Cookies Menu</h3>
+
+                <p class="text-sm text-gray-500 mb-4" style="margin:0;">Check the items you want, and quantity options will appear.</p>
+
+                
+
+                <div class="space-y-3">
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+
+                        <div class="bg-white p-3 rounded-lg border border-gray-200 shadow-sm" style="border-width: 1px !important;">
+
+                            <label class="flex items-center space-x-3 cursor-pointer">
+
+                                <input type="checkbox" class="form-checkbox h-5 w-5 text-[#4e8ea1] rounded" onchange="toggleVisibility('sub-cinn-rolls', this.checked)">
+
+                                <span class="font-semibold text-gray-700">Cinnamon Rolls</span>
+
+                            </label>
+
+                            <div id="sub-cinn-rolls" class="hidden mt-3 pl-8">
+
+                                <div class="flex items-center space-x-2"><span class="text-sm text-gray-500">Qty:</span><input type="number" min="1" class="p-1 w-20 rounded item-qty focus:ring-[#4e8ea1]" data-name="Cinnamon Rolls"></div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="bg-white p-3 rounded-lg border border-gray-200 shadow-sm" style="border-width: 1px !important;">
+
+                            <label class="flex items-center space-x-3 cursor-pointer">
+
+                                <input type="checkbox" class="form-checkbox h-5 w-5 text-[#4e8ea1] rounded" onchange="toggleVisibility('sub-biscotti', this.checked)">
+
+                                <span class="font-semibold text-gray-700">Cinnamon Roll Biscotti</span>
+
+                            </label>
+
+                            <div id="sub-biscotti" class="hidden mt-3 pl-8">
+
+                                <div class="flex items-center space-x-2"><span class="text-sm text-gray-500">Qty:</span><input type="number" min="1" class="p-1 w-20 rounded item-qty focus:ring-[#4e8ea1]" data-name="Cinnamon Roll Biscotti"></div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="bg-white p-3 rounded-lg border border-gray-200 shadow-sm" style="border-width: 1px !important;">
+
+                            <label class="flex items-center space-x-3 cursor-pointer">
+
+                                <input type="checkbox" class="form-checkbox h-5 w-5 text-[#4e8ea1] rounded" onchange="toggleVisibility('sub-boston', this.checked)">
+
+                                <span class="font-semibold text-gray-700">Boston Cream Donuts</span>
+
+                            </label>
+
+                            <div id="sub-boston" class="hidden mt-3 pl-8">
+
+                                <div class="flex items-center space-x-2"><span class="text-sm text-gray-500">Qty:</span><input type="number" min="1" class="p-1 w-20 rounded item-qty focus:ring-[#4e8ea1]" data-name="Boston Cream Donuts"></div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="bg-white p-3 rounded-lg border border-gray-200 shadow-sm" style="border-width: 1px !important;">
+
+                            <label class="flex items-center space-x-3 cursor-pointer">
+
+                                <input type="checkbox" class="form-checkbox h-5 w-5 text-[#4e8ea1] rounded" onchange="toggleVisibility('sub-cakepops', this.checked)">
+
+                                <span class="font-semibold text-gray-700">Cakepops</span>
+
+                            </label>
+
+                            <div id="sub-cakepops" class="hidden mt-3 pl-8">
+
+                                <div class="flex items-center space-x-2"><span class="text-sm text-gray-500">Qty:</span><input type="number" min="1" class="p-1 w-20 rounded item-qty focus:ring-[#4e8ea1]" data-name="Cakepops"></div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="bg-white p-3 rounded-lg border border-gray-200 shadow-sm" style="border-width: 1px !important;">
+
+                            <label class="flex items-center space-x-3 cursor-pointer">
+
+                                <input type="checkbox" class="form-checkbox h-5 w-5 text-[#4e8ea1] rounded" onchange="toggleVisibility('sub-pudding', this.checked)">
+
+                                <span class="font-semibold text-gray-700">Bread Pudding</span>
+
+                            </label>
+
+                            <div id="sub-pudding" class="hidden mt-3 pl-8">
+
+                                <div class="flex items-center space-x-2"><span class="text-sm text-gray-500">Qty:</span><input type="number" min="1" class="p-1 w-20 rounded item-qty focus:ring-[#4e8ea1]" data-name="Bread Pudding"></div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+
+                    <div class="bg-white p-3 rounded-lg border border-gray-200 shadow-sm" style="border-width: 1px !important;">
+
+                        <label class="flex items-center space-x-3 cursor-pointer">
+
+                            <input type="checkbox" class="form-checkbox h-5 w-5 text-[#4e8ea1] rounded" onchange="toggleVisibility('sub-yeast', this.checked)">
+
+                            <span class="font-semibold text-gray-700">Yeast Donuts</span>
+
+                        </label>
+
+                        <div id="sub-yeast" class="hidden mt-4 pl-8 border-[#4e8ea1] ml-2 space-y-4" style="border-left-width: 2px !important;">
+
+                            <div>
+
+                                <h4 class="text-sm font-bold text-[#852c51] mb-2" style="margin-top:0;">Frostings (Fluffy texture) - Enter Qty:</h4>
+
+                                <div class="grid grid-cols-2 md:grid-cols-3 gap-2 text-sm">
+
+                                    <div class="flex items-center justify-between bg-gray-50 p-2 rounded"><span class="w-24 text-gray-600">Vanilla:</span> <input type="number" min="0" class="p-1 w-16 rounded donut-qty border-gray-300" data-flavor="Vanilla Frosted"></div>
+
+                                    <div class="flex items-center justify-between bg-gray-50 p-2 rounded"><span class="w-24 text-gray-600">Chocolate:</span> <input type="number" min="0" class="p-1 w-16 rounded donut-qty border-gray-300" data-flavor="Chocolate Frosted"></div>
+
+                                    <div class="flex items-center justify-between bg-gray-50 p-2 rounded"><span class="w-24 text-gray-600">Strawberry:</span> <input type="number" min="0" class="p-1 w-16 rounded donut-qty border-gray-300" data-flavor="Strawberry Frosted"></div>
+
+                                    <div class="flex items-center justify-between bg-gray-50 p-2 rounded"><span class="w-24 text-gray-600">Lemon:</span> <input type="number" min="0" class="p-1 w-16 rounded donut-qty border-gray-300" data-flavor="Lemon Frosted"></div>
+
+                                    <div class="flex items-center justify-between bg-gray-50 p-2 rounded"><span class="w-24 text-gray-600">Cold Brew:</span> <input type="number" min="0" class="p-1 w-16 rounded donut-qty border-gray-300" data-flavor="Cold Brew Frosted"></div>
+
+                                </div>
+
+                            </div>
+
+                            <div>
+
+                                <h4 class="text-sm font-bold text-[#852c51] mb-2" style="margin-top:0;">Icings (Glaze texture) - Enter Qty:</h4>
+
+                                <div class="grid grid-cols-2 md:grid-cols-3 gap-2 text-sm">
+
+                                    <div class="flex items-center justify-between bg-gray-50 p-2 rounded"><span class="w-24 text-gray-600">Vanilla Icing:</span> <input type="number" min="0" class="p-1 w-16 rounded donut-qty border-gray-300" data-flavor="Vanilla Glazed"></div>
+
+                                    <div class="flex items-center justify-between bg-gray-50 p-2 rounded"><span class="w-24 text-gray-600">Choc Icing:</span> <input type="number" min="0" class="p-1 w-16 rounded donut-qty border-gray-300" data-flavor="Chocolate Glazed"></div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+
+                    <div class="bg-white p-3 rounded-lg border border-gray-200 shadow-sm" style="border-width: 1px !important;">
+
+                        <label class="flex items-center space-x-3 cursor-pointer">
+
+                            <input type="checkbox" class="form-checkbox h-5 w-5 text-[#4e8ea1] rounded" onchange="toggleVisibility('sub-cupcakes', this.checked)">
+
+                            <span class="font-semibold text-gray-700">Cupcakes</span>
+
+                        </label>
+
+                        <div id="sub-cupcakes" class="hidden mt-4 pl-8 border-[#4e8ea1] ml-2" style="border-left-width: 2px !important;">
+
+                            <p class="text-xs text-gray-400 mb-3" style="margin:0;">Add a row for each flavor combination you need.</p>
+
+                            <div id="cupcake-batches" class="space-y-3 mb-3"></div>
+
+                            <button type="button" onclick="addCupcakeBatch()" class="text-sm bg-[#fdf2f0] hover:bg-[#4e8ea1] hover:text-white text-[#4e8ea1] py-1.5 px-3 rounded-full font-bold transition cursor-pointer" style="border-width:0 !important;"><i class="fas fa-plus mr-1"></i> Add Cupcake Batch</button>
+
+                        </div>
+
+                    </div>
+
+
+
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+
+                        <div class="bg-white p-3 rounded-lg border border-gray-200 shadow-sm" style="border-width: 1px !important;">
+
+                            <label class="flex items-center space-x-3 cursor-pointer"><input type="checkbox" class="form-checkbox h-5 w-5 text-[#4e8ea1] rounded" onchange="toggleVisibility('sub-turnover', this.checked)"><span class="font-semibold text-gray-700">Turnovers</span></label>
+
+                            <div id="sub-turnover" class="hidden mt-2 space-y-2 pl-8 text-sm">
+
+                                <div class="flex justify-between items-center text-gray-600">Cherry: <input type="number" min="0" class="p-1 w-16 rounded turnover-qty border-gray-300" data-flavor="Cherry"></div>
+
+                                <div class="flex justify-between items-center text-gray-600">Raspberry: <input type="number" min="0" class="p-1 w-16 rounded turnover-qty border-gray-300" data-flavor="Raspberry"></div>
+
+                                <div class="flex justify-between items-center text-gray-600">Blueberry: <input type="number" min="0" class="p-1 w-16 rounded turnover-qty border-gray-300" data-flavor="Blueberry"></div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="bg-white p-3 rounded-lg border border-gray-200 shadow-sm" style="border-width: 1px !important;">
+
+                            <label class="flex items-center space-x-3 cursor-pointer"><input type="checkbox" class="form-checkbox h-5 w-5 text-[#4e8ea1] rounded" onchange="toggleVisibility('sub-scones', this.checked)"><span class="font-semibold text-gray-700">Scones</span></label>
+
+                            <div id="sub-scones" class="hidden mt-2 space-y-2 pl-8 text-sm">
+
+                                <div class="flex justify-between items-center text-gray-600">Blueberry: <input type="number" min="0" class="p-1 w-16 rounded scone-qty border-gray-300" data-flavor="Blueberry"></div>
+
+                                <div class="flex justify-between items-center text-gray-600">Raspberry: <input type="number" min="0" class="p-1 w-16 rounded scone-qty border-gray-300" data-flavor="Raspberry"></div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="bg-white p-3 rounded-lg border border-gray-200 shadow-sm" style="border-width: 1px !important;">
+
+                            <label class="flex items-center space-x-3 cursor-pointer"><input type="checkbox" class="form-checkbox h-5 w-5 text-[#4e8ea1] rounded" onchange="toggleVisibility('sub-muffins', this.checked)"><span class="font-semibold text-gray-700">Banana Muffins</span></label>
+
+                            <div id="sub-muffins" class="hidden mt-2 space-y-2 pl-8 text-sm">
+
+                                <div class="flex justify-between items-center text-gray-600">Chocolate Chip: <input type="number" min="0" class="p-1 w-16 rounded muffin-qty border-gray-300" data-flavor="Chocolate Chip"></div>
+
+                                <div class="flex justify-between items-center text-gray-600">Date Crumble: <input type="number" min="0" class="p-1 w-16 rounded muffin-qty border-gray-300" data-flavor="Date Crumble"></div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="bg-white p-3 rounded-lg border border-gray-200 shadow-sm" style="border-width: 1px !important;">
+
+                            <label class="flex items-center space-x-3 cursor-pointer"><input type="checkbox" class="form-checkbox h-5 w-5 text-[#4e8ea1] rounded" onchange="toggleVisibility('sub-coffee', this.checked)"><span class="font-semibold text-gray-700">Coffee Cakes</span></label>
+
+                            <div id="sub-coffee" class="hidden mt-2 space-y-2 pl-8 text-sm">
+
+                                <div class="flex justify-between items-center text-gray-600">Cinnamon: <input type="number" min="0" class="p-1 w-16 rounded coffee-qty border-gray-300" data-flavor="Cinnamon"></div>
+
+                                <div class="flex justify-between items-center text-gray-600">Blueberry & Rasp: <input type="number" min="0" class="p-1 w-16 rounded coffee-qty border-gray-300" data-flavor="Blueberry & Raspberry"></div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+
+                    <div class="bg-white p-3 rounded-lg mt-3 border border-gray-200 shadow-sm" style="border-width: 1px !important;">
+
+                        <label class="flex items-center space-x-3 cursor-pointer">
+
+                            <input type="checkbox" class="form-checkbox h-5 w-5 text-[#4e8ea1] rounded" onchange="toggleVisibility('sub-cookies', this.checked)">
+
+                            <span class="font-semibold text-gray-700">Cookies</span>
+
+                        </label>
+
+                        <div id="sub-cookies" class="hidden mt-4 pl-8 border-[#4e8ea1] ml-2 space-y-5" style="border-left-width: 2px !important;">
+
+                            
+
+                            <div>
+
+                                <h4 class="text-sm font-bold text-[#852c51] mb-2 pb-1" style="margin-top:0; border-bottom-width: 1px !important; border-color: #e5e7eb !important;">Standard Cookies</h4>
+
+                                <div class="space-y-2 text-sm max-w-sm">
+
+                                    <div class="flex justify-between items-center text-gray-600">Chocolate Chip: <input type="number" min="0" class="p-1 w-16 rounded cookie-qty border-gray-300" data-flavor="Chocolate Chip"></div>
+
+                                    <div class="flex justify-between items-center text-gray-600">Toffee Choc Chip: <input type="number" min="0" class="p-1 w-16 rounded cookie-qty border-gray-300" data-flavor="Toffee Choc Chip"></div>
+
+                                    <div class="flex justify-between items-center text-gray-600">Iced Gingerbread: <input type="number" min="0" class="p-1 w-16 rounded cookie-qty border-gray-300" data-flavor="Iced Gingerbread"></div>
+
+                                </div>
+
+                            </div>
+
+
+
+
+                            <div>
+
+                                <h4 class="text-sm font-bold text-[#852c51] mb-2 pb-1" style="margin-top:0; border-bottom-width: 1px !important; border-color: #e5e7eb !important;">Mini Cookies (Sold in Bags of 10)</h4>
+
+                                <div class="space-y-2 text-sm max-w-sm">
+
+                                    <div class="flex justify-between items-center text-gray-600">Choc Chip Bags: <input type="number" min="0" class="p-1 w-16 rounded minicookie-qty border-gray-300" data-flavor="Mini Choc Chip"></div>
+
+                                    <div class="flex justify-between items-center text-gray-600">Gingerbread Bags: <input type="number" min="0" class="p-1 w-16 rounded minicookie-qty border-gray-300" data-flavor="Mini Gingerbread"></div>
+
+                                    <div class="flex justify-between items-center text-gray-600">Double Choc Bags: <input type="number" min="0" class="p-1 w-16 rounded minicookie-qty border-gray-300" data-flavor="Mini Double Choc"></div>
+
+                                </div>
+
+                            </div>
+
+
+
+
+                            <div>
+
+                                <h4 class="text-sm font-bold text-[#852c51] mb-2 pb-1" style="margin-top:0; border-bottom-width: 1px !important; border-color: #e5e7eb !important;">Frosted Sugar Cookies</h4>
+
+                                <p class="text-xs text-gray-400 mb-2" style="margin:0;">Available Frosting: Vanilla, Choc, Strawberry, Lemon, Cold Brew</p>
+
+                                <div id="sugar-cookie-batches" class="space-y-2 mb-2"></div>
+
+                                <button type="button" onclick="addSugarCookieBatch('Standard')" class="text-xs bg-[#fdf2f0] hover:bg-[#4e8ea1] hover:text-white text-[#4e8ea1] p-1.5 px-3 rounded-full font-bold cursor-pointer">+ Add Frosted Sugar Cookie Batch</button>
+
+                            </div>
+
+
+
+
+                            <div>
+
+                                <h4 class="text-sm font-bold text-[#852c51] mb-2 pb-1" style="margin-top:0; border-bottom-width: 1px !important; border-color: #e5e7eb !important;">Decorated, Frosted Sugar Cookies</h4>
+
+                                <div id="dec-sugar-cookie-batches" class="space-y-2 mb-2"></div>
+
+                                <button type="button" onclick="addSugarCookieBatch('Decorated')" class="text-xs bg-[#fdf2f0] hover:bg-[#4e8ea1] hover:text-white text-[#4e8ea1] p-1.5 px-3 rounded-full font-bold cursor-pointer">+ Add Decorated Sugar Cookie Batch</button>
+
+                            </div>
+
+
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+
+            <div id="section-cakes" class="reveal-section bg-gray-50 p-6 rounded-xl border border-gray-200" style="border-width: 1px !important;">
+
+                <h3 class="text-xl font-bold mb-4 text-[#852c51] border-gray-300 pb-2" style="margin-top:0; border-bottom-width: 1px !important;">Custom Cakes Menu</h3>
+
+                
+
+                <div id="cake-builders-container" class="space-y-6"></div>
+
+
+
+
+                <button type="button" onclick="addCakeBuilder()" class="mt-4 w-full border-dashed border-[#4e8ea1] text-[#4e8ea1] font-bold py-3 rounded-lg hover:bg-[#fdf2f0] transition cursor-pointer" style="background-color:transparent; border-width:2px !important;">
+
+                    <i class="fas fa-plus mr-2"></i> Add Another Custom Cake
+
+                </button>
+
+            </div>
+
+
+
+
+            <div id="section-breads" class="reveal-section bg-gray-50 p-6 rounded-xl border border-gray-200" style="border-width: 1px !important;">
+
+                <h3 class="text-xl font-bold mb-4 text-[#852c51] border-gray-300 pb-2" style="margin-top:0; border-bottom-width: 1px !important;">Breads & Bagels Menu</h3>
+
+
+
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+                    <div class="bg-white p-4 rounded-lg border border-gray-200 shadow-sm" style="border-width: 1px !important;">
+
+                        <h4 class="font-bold text-gray-700 mb-3" style="margin-top:0;"><i class="fas fa-bread-slice mr-2 text-[#4e8ea1]"></i>Bread Loaves</h4>
+
+                        <div class="space-y-2 text-sm text-gray-600">
+
+                            <div class="flex justify-between items-center">Sandwich: <input type="number" min="0" class="p-1 w-16 rounded loaf-qty border-gray-300" data-flavor="Sandwich Loaf"></div>
+
+                            <div class="flex justify-between items-center">Sourdough: <input type="number" min="0" class="p-1 w-16 rounded loaf-qty border-gray-300" data-flavor="Sourdough Loaf"></div>
+
+                            <div class="flex justify-between items-center">Cinnamon Raisin: <input type="number" min="0" class="p-1 w-16 rounded loaf-qty border-gray-300" data-flavor="Cinnamon Raisin Loaf"></div>
+
+                        </div>
+
+                    </div>
+
+
+
+
+                    <div class="bg-white p-4 rounded-lg border border-gray-200 shadow-sm" style="border-width: 1px !important;">
+
+                        <h4 class="font-bold text-gray-700 mb-3" style="margin-top:0;"><i class="fas fa-hamburger mr-2 text-[#4e8ea1]"></i>Rolls & Focaccia</h4>
+
+                        <div class="space-y-2 text-sm text-gray-600">
+
+                            <div class="flex justify-between items-center">Garlic Focaccia: <input type="number" min="0" class="p-1 w-16 rounded bread-qty border-gray-300" data-flavor="Garlic Focaccia"></div>
+
+                            <div class="flex justify-between items-center">Plain Rolls: <input type="number" min="0" class="p-1 w-16 rounded bread-qty border-gray-300" data-flavor="Plain Rolls"></div>
+
+                            <div class="flex justify-between items-center">Garlic Rolls: <input type="number" min="0" class="p-1 w-16 rounded bread-qty border-gray-300" data-flavor="Garlic Rolls"></div>
+
+                        </div>
+
+                    </div>
+
+
+
+
+                    <div class="bg-white p-4 rounded-lg md:col-span-2 border border-gray-200 shadow-sm" style="border-width: 1px !important;">
+
+                        <h4 class="font-bold text-gray-700 mb-2" style="margin-top:0;"><i class="fas fa-circle-notch mr-2 text-[#4e8ea1]"></i>Bagels & Spreads</h4>
+
+                        <p class="text-xs text-gray-400 mb-3" style="margin:0;">Add a row to pair a specific bagel with a spread.</p>
+
+                        
+
+                        <div id="bagel-batches" class="space-y-2 mb-3"></div>
+
+                        
+
+                        <button type="button" onclick="addBagelBatch()" class="text-xs font-bold bg-[#fdf2f0] hover:bg-[#4e8ea1] hover:text-white text-[#4e8ea1] py-1.5 px-3 rounded-full transition cursor-pointer">
+
+                            <i class="fas fa-plus mr-1"></i> Add Bagel Order
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+
+            <div class="mt-8 pt-8 border-gray-200 text-center" style="border-top-width: 1px !important;">
+
+                <button type="button" onclick="generateReview()" class="bg-[#4e8ea1] hover:bg-opacity-90 text-white font-bold py-3 px-8 rounded-lg shadow-lg mb-6 transition cursor-pointer" style="border-width:0 !important;">Review Order Summary <i class="fas fa-clipboard-list ml-2"></i></button>
+
+                
+
+                <div id="review-box" class="hidden text-left bg-gray-50 p-6 rounded-xl shadow-inner mb-6 border border-gray-200" style="border-width: 1px !important;">
+
+                    <h3 class="text-xl font-bold mb-4 border-gray-300 pb-2 text-[#852c51]" style="margin-top:0; border-bottom-width: 1px !important;">Order Summary</h3>
+
+                    <div id="review-content" class="space-y-4 text-sm text-gray-800"></div>
+
+                </div>
+
+
+
+
+                <input type="hidden" id="full-order-details" name="Order Details">
+
+                <div id="recaptcha-wrapper">
+
+                    <div
+
+                        class="g-recaptcha"
+
+                        data-sitekey="6LeOnHMtAAAAAHenkBi7Rs4APVZbKnWNx0_zmfxj"
+
+                        data-expired-callback="onRecaptchaExpired">
+
+                    </div>
+
+                </div>
+
+                <p id="captcha-error">
+
+                    Please check “I’m not a robot” before submitting your order.
+
+                </p>
+
+
+
+
+                <button type="button" onclick="prepareAndSubmit()" class="w-full sm:w-auto bg-[#852c51] hover:bg-opacity-90 text-white font-bold py-4 px-12 rounded-lg shadow-lg transform transition hover:scale-105 text-lg cursor-pointer" style="border-width:0 !important;">Submit Final Order <i class="fas fa-check-circle ml-2"></i></button>
+
+            </div>
+
+
+
+
+        </div>
+
+    </div>
+
+    </form>
+
+</div>
+
+
+
+
+<script>
+
+    function toggleSection(sectionId, isVisible) {
+
+        const el = document.getElementById(sectionId);
+
+        if (isVisible) el.classList.add('active');
+
+        else el.classList.remove('active');
+
+    }
+
+
+
+
+    function toggleVisibility(divId, isVisible) {
+
+        const el = document.getElementById(divId);
+
+        if (isVisible) {
+
+            el.classList.remove('hidden');
+
+        } else {
+
+            el.classList.add('hidden');
+
+            const inputs = el.querySelectorAll('input[type="number"]');
+
+            inputs.forEach(input => input.value = '');
+
+        }
+
+    }
+
+
+
+
+    function removeElement(btn) { btn.parentElement.remove(); }
+
+
+
+
+    const frostings = ['Vanilla', 'Chocolate', 'Strawberry', 'Lemon', 'Cold Brew Coffee'];
+
+    const cakeFlavors = ['Vanilla', 'Chocolate', 'Lemon', 'Carrot', 'Pumpkin'];
+
+
+
+
+    function addCupcakeBatch() {
+
+        const container = document.getElementById('cupcake-batches');
+
+        const row = document.createElement('div');
+
+        row.className = 'cupcake-row flex flex-wrap items-center gap-2 bg-white p-2 rounded relative pr-8';
+
+        row.style.cssText = 'border-width: 1px !important; border-color: #e5e7eb !important;';
+
+        
+
+        let flavorOptions = cakeFlavors.map(f => `<option value="${f}">${f} Cake</option>`).join('');
+
+        let frostingOptions = frostings.map(f => `<option value="${f}">${f} Frosting</option>`).join('');
+
+
+
+
+        row.innerHTML = `
+
+            <input type="number" min="1" placeholder="Qty" class="p-1 w-16 text-sm rounded border-gray-300 cc-qty">
+
+            <select class="p-1 text-sm rounded border-gray-300 cc-flavor"><option value="" disabled selected>Cake Flavor...</option>${flavorOptions}</select>
+
+            <select class="p-1 text-sm rounded border-gray-300 cc-frosting"><option value="" disabled selected>Frosting...</option>${frostingOptions}</select>
+
+            <select class="p-1 text-sm rounded border-gray-300 cc-sprinkles"><option value="Sprinkles">Yes Sprinkles</option><option value="No Sprinkles">No Sprinkles</option></select>
+
+            <button type="button" onclick="removeElement(this)" class="absolute right-2 text-red-400 hover:text-red-600 cursor-pointer" style="border-width:0 !important; background:transparent;"><i class="fas fa-times"></i></button>
+
+        `;
+
+        container.appendChild(row);
+
+    }
+
+
+
+
+    function addSugarCookieBatch(type) {
+
+        const container = document.getElementById(type === 'Standard' ? 'sugar-cookie-batches' : 'dec-sugar-cookie-batches');
+
+        const row = document.createElement('div');
+
+        row.className = `${type === 'Standard' ? 'sc-row' : 'dsc-row'} flex flex-col gap-2 bg-white p-2 rounded relative pr-8`;
+
+        row.style.cssText = 'border-width: 1px !important; border-color: #e5e7eb !important;';
+
+        
+
+        let frostingOptions = frostings.map(f => `<option value="${f}">${f} Frosting</option>`).join('');
+
+        
+
+        let html = `
+
+            <div class="flex items-center gap-2">
+
+                <input type="number" min="1" placeholder="Qty" class="p-1 w-16 text-sm rounded border-gray-300 cookie-batch-qty">
+
+                <select class="p-1 text-sm rounded border-gray-300 cookie-batch-frosting"><option value="" disabled selected>Frosting Flavor...</option>${frostingOptions}</select>
+
+            </div>
+
+        `;
+
+
+
+
+        if (type === 'Decorated') html += `<input type="text" placeholder="Design specifications (e.g. Blue flowers)..." class="p-1 text-sm rounded border-gray-300 w-full cookie-batch-notes">`;
+
+
+
+
+        html += `<button type="button" onclick="removeElement(this)" class="absolute top-2 right-2 text-red-400 hover:text-red-600 cursor-pointer" style="border-width:0 !important; background:transparent;"><i class="fas fa-times"></i></button>`;
+
+        row.innerHTML = html;
+
+        container.appendChild(row);
+
+    }
+
+
+
+
+    function addBagelBatch() {
+
+        const container = document.getElementById('bagel-batches');
+
+        const row = document.createElement('div');
+
+        row.className = 'bagel-row flex flex-wrap items-center gap-2 bg-white p-2 rounded relative pr-8 mb-2 border border-gray-200 shadow-sm';
+
+        row.style.cssText = 'border-width: 1px !important;';
+
+
+
+
+        const bagelFlavors = ['Plain', 'Chocolate Chip', 'Cinnamon Sugar'];
+
+        const spreadFlavors = ['Plain Cream Cheese', 'Scallion Cream Cheese', 'Cinnamon Cream Cheese', 'No Spread (Dry)'];
+
+        
+
+        let bagelOpts = bagelFlavors.map(f => `<option value="${f}">${f} Bagel</option>`).join('');
+
+        let spreadOpts = spreadFlavors.map(f => `<option value="${f}">${f}</option>`).join('');
+
+
+
+
+        row.innerHTML = `
+
+            <input type="number" min="1" placeholder="Qty" class="p-1 w-16 text-sm rounded border-gray-300 bagel-batch-qty">
+
+            <select class="p-1 text-sm rounded border-gray-300 bagel-batch-flavor"><option value="" disabled selected>Bagel Flavor...</option>${bagelOpts}</select>
+
+            <select class="p-1 text-sm rounded border-gray-300 bagel-batch-spread"><option value="" disabled selected>Select Spread...</option>${spreadOpts}</select>
+
+            <button type="button" onclick="removeElement(this)" class="absolute right-2 text-red-400 hover:text-red-600 cursor-pointer" style="border-width:0 !important; background:transparent;"><i class="fas fa-times"></i></button>
+
+        `;
+
+        container.appendChild(row);
+
+    }
+
+
+
+
+    let cakeCounter = 0;
+
+    function addCakeBuilder() {
+
+        cakeCounter++;
+
+        const container = document.getElementById('cake-builders-container');
+
+        const wrapper = document.createElement('div');
+
+        const id = `cake-group-${cakeCounter}`;
+
+        wrapper.className = 'cake-instance bg-white p-4 rounded-lg shadow-sm border border-gray-200 relative';
+
+        wrapper.style.cssText = 'border-width: 1px !important;'; 
+
+        wrapper.id = id;
+
+
+
+
+        const sizes = ['4" Single Layer (Serves 2-3)', '6" Single Layer (Serves 6)', '6" Double Layer (Serves 12-16)', '8" Single Layer (Serves 8-12)', '8" Double Layer (Serves 24-30)', 'Bundt (Serves 8-12)'];
+
+        const compotes = ['Strawberry', 'Cherry', 'Blueberry', 'Raspberry'];
+
+        const writingFrostings = ['Vanilla (White)', 'Chocolate (Brown)', 'Strawberry (Pink)', 'Lemon (White)', 'Cold Brew (Beige)', 'Colored Vanilla (Muted/Pastel)'];
+
+
+
+
+        wrapper.innerHTML = `
+
+            ${cakeCounter > 1 ? `<button type="button" onclick="document.getElementById('${id}').remove()" class="absolute top-3 right-3 text-red-400 hover:text-red-600 cursor-pointer" style="border-width:0 !important; background:transparent;"><i class="fas fa-trash"></i></button>` : ''}
+
+            <h4 class="font-bold text-[#852c51] mb-3" style="margin-top:0;">Cake #${cakeCounter}</h4>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-3 mb-3">
+
+                <div>
+
+                    <label class="block text-xs font-semibold text-gray-500 mb-1">Size *</label>
+
+                    <select class="w-full rounded border-gray-300 p-2 text-sm cake-size">
+
+                        <option value="" disabled selected>Select Size...</option>
+
+                        ${sizes.map(s => `<option value='${s}'>${s}</option>`).join('')}
+
+                    </select>
+
+                </div>
+
+                <div>
+
+                    <label class="block text-xs font-semibold text-gray-500 mb-1">Cake Flavor *</label>
+
+                    <select class="w-full rounded border-gray-300 p-2 text-sm cake-flavor">
+
+                        <option value="" disabled selected>Select Flavor...</option>
+
+                        ${cakeFlavors.map(f => `<option value="${f}">${f}</option>`).join('')}
+
+                    </select>
+
+                </div>
+
+                <div>
+
+                    <label class="block text-xs font-semibold text-gray-500 mb-1">Frosting *</label>
+
+                    <select class="w-full rounded border-gray-300 p-2 text-sm cake-frosting">
+
+                        <option value="" disabled selected>Select Frosting...</option>
+
+                        ${frostings.map(f => `<option value="${f}">${f}</option>`).join('')}
+
+                        <option value="Coconut Whipped Cream">Coconut Whipped Cream (+Fee)(lightly sweetened with syrup)(no coloring option)</option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+
+
+            <div class="space-y-2 pt-3 mt-2" style="border-top-width: 1px !important; border-color: #e5e7eb !important;">
+
+                <label class="flex items-center space-x-2 text-sm cursor-pointer font-semibold text-gray-700">
+
+                    <input type="checkbox" class="form-checkbox text-[#4e8ea1] rounded cake-chk-compote" onchange="toggleVisibility('compote-${id}', this.checked)">
+
+                    <span>Add Fruit Compote Filling (+Fee)</span>
+
+                </label>
+
+                <div id="compote-${id}" class="hidden pl-6 pb-2">
+
+                    <select class="rounded border-gray-300 p-1 text-sm cake-compote"><option value="" disabled selected>Select Fruit...</option>${compotes.map(c => `<option value="${c}">${c}</option>`).join('')}</select>
+
+                </div>
+
+
+
+
+                <label class="flex items-center space-x-2 text-sm cursor-pointer font-semibold text-gray-700">
+
+                    <input type="checkbox" class="form-checkbox text-[#4e8ea1] rounded cake-chk-writing" onchange="toggleVisibility('writing-${id}', this.checked)">
+
+                    <span>Add Writing on Top</span>
+
+                </label>
+
+                <div id="writing-${id}" class="hidden pl-6 pb-2 space-y-2 bg-gray-50 p-2 rounded">
+
+                    <input type="text" placeholder="What should it say?" class="w-full rounded border-gray-300 p-2 text-sm cake-writing-text">
+
+                    <select class="w-full rounded border-gray-300 p-2 text-sm cake-writing-color" onchange="toggleVisibility('custom-color-${id}', this.value.includes('Colored'))">
+
+                        <option value="" disabled selected>Select Frosting Color for Writing...</option>
+
+                        ${writingFrostings.map(f => `<option value="${f}">${f}</option>`).join('')}
+
+                    </select>
+
+                    <input type="text" id="custom-color-${id}" placeholder="Specify Pastel/Muted Color..." class="hidden w-full rounded border-gray-300 p-2 text-sm cake-custom-color">
+
+                </div>
+
+
+
+
+                <label class="flex items-center space-x-2 text-sm cursor-pointer font-semibold text-gray-700">
+
+                    <input type="checkbox" class="form-checkbox text-[#4e8ea1] rounded cake-chk-deco" onchange="toggleVisibility('deco-${id}', this.checked)">
+
+                    <span>Add Other Decorations (+Fee)</span>
+
+                </label>
+
+                <div id="deco-${id}" class="hidden pl-6">
+
+                    <textarea placeholder="Describe decorations..." class="w-full rounded border-gray-300 p-2 text-sm cake-deco-text" rows="2"></textarea>
+
+                </div>
+
+
+
+
+                <div class="bg-[#fdf2f0] text-[#852c51] p-3 rounded text-sm mt-3 border border-[#fdf2f0]" style="border-width: 1px !important;">
+
+                    <i class="fas fa-camera mr-2"></i><strong>Have a specific design?</strong> Please email your inspiration photos to sweetelizabethscolorado@gmail.com after submitting your order!
+
+                </div>
+
+            </div>
+
+        `;
+
+        container.appendChild(wrapper);
+
+
+
+        // Restriction: 4" cakes cannot have fruit compote filling or additional decorations.
+
+        const sizeSelect = wrapper.querySelector('.cake-size');
+
+        sizeSelect.addEventListener('change', function() {
+
+            const is4Inch = sizeSelect.value.startsWith('4"');
+
+            const compoteChk = wrapper.querySelector('.cake-chk-compote');
+
+            const decoChk = wrapper.querySelector('.cake-chk-deco');
+
+
+
+            compoteChk.disabled = is4Inch;
+
+            compoteChk.closest('label').classList.toggle('opacity-50', is4Inch);
+
+            if (is4Inch && compoteChk.checked) {
+
+                compoteChk.checked = false;
+
+                toggleVisibility(`compote-${id}`, false);
+
+            }
+
+
+
+            decoChk.disabled = is4Inch;
+
+            decoChk.closest('label').classList.toggle('opacity-50', is4Inch);
+
+            if (is4Inch && decoChk.checked) {
+
+                decoChk.checked = false;
+
+                toggleVisibility(`deco-${id}`, false);
+
+            }
+
+        });
+
+    }
+
+
+
+
+    const MIN_PICKUP_DAYS_AHEAD = 3;
+
+
+
+
+    function parseLocalDate(isoDate) {
+
+        const [year, month, day] = isoDate.split('-').map(Number);
+
+        return new Date(year, month - 1, day);
+
+    }
+
+
+
+
+    function formatISODate(date) {
+
+        const yyyy = date.getFullYear();
+
+        const mm = String(date.getMonth() + 1).padStart(2, '0');
+
+        const dd = String(date.getDate()).padStart(2, '0');
+
+        return `${yyyy}-${mm}-${dd}`;
+
+    }
+
+
+
+
+    function getEarliestPickupDate() {
+
+        const earliest = new Date();
+
+        earliest.setHours(0, 0, 0, 0);
+
+        earliest.setDate(earliest.getDate() + MIN_PICKUP_DAYS_AHEAD);
+
+        while (earliest.getDay() === 1) earliest.setDate(earliest.getDate() + 1);
+
+        return earliest;
+
+    }
+
+
+
+
+    function showDateError(message) {
+
+        const errorEl = document.getElementById('date-error');
+
+        const dateInput = document.getElementById('cust-date');
+
+        if (errorEl) {
+
+            errorEl.textContent = message;
+
+            errorEl.style.display = 'block';
+
+        }
+
+        if (dateInput) dateInput.classList.add('date-invalid');
+
+    }
+
+
+
+
+    function clearDateError() {
+
+        const errorEl = document.getElementById('date-error');
+
+        const dateInput = document.getElementById('cust-date');
+
+        if (errorEl) {
+
+            errorEl.textContent = '';
+
+            errorEl.style.display = 'none';
+
+        }
+
+        if (dateInput) {
+
+            dateInput.classList.remove('date-invalid');
+
+            dateInput.setCustomValidity('');
+
+        }
+
+    }
+
+
+
+
+    function validatePickupDate(dateInput) {
+
+        if (!dateInput) return { valid: true, message: '' };
+
+        if (!dateInput.value) {
+
+            return { valid: false, message: 'Please choose a pickup date.' };
+
+        }
+
+        const pickedDate = parseLocalDate(dateInput.value);
+
+        const earliestDate = getEarliestPickupDate();
+
+        if (pickedDate < earliestDate) {
+
+            return { valid: false, message: 'Orders need at least 2 days notice. Please choose a later pickup date.' };
+
+        }
+
+        if (pickedDate.getDay() === 1) {
+
+            return { valid: false, message: "Sorry, we're closed on Mondays. Please choose a different pickup date." };
+
+        }
+
+        return { valid: true, message: '' };
+
+    }
+
+
+
+
+    function applyPickupDateValidation(dateInput, showVisibleError) {
+
+        const result = validatePickupDate(dateInput);
+
+        if (!result.valid) {
+
+            dateInput.setCustomValidity(result.message);
+
+            if (showVisibleError) showDateError(result.message);
+
+            return false;
+
+        }
+
+        clearDateError();
+
+        return true;
+
+    }
+
+
+
+
+    function generateReview() {
+
+        const form = document.getElementById('orderForm');
+
+        const dateInput = document.getElementById('cust-date');
+
+        if (!applyPickupDateValidation(dateInput, true)) {
+
+            dateInput.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+            return false;
+
+        }
+
+        if (!form.checkValidity()) {
+
+            const firstInvalid = form.querySelector(':invalid');
+
+            if (firstInvalid) {
+
+                firstInvalid.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+                firstInvalid.focus({ preventScroll: true });
+
+            }
+
+            form.reportValidity();
+
+            return false;
+
+        }
+
+
+
+
+        const box = document.getElementById('review-box');
+
+        const content = document.getElementById('review-content');
+
+        box.classList.remove('hidden');
+
+        box.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
+        
+
+        let customerInfoHtml = '';
+
+        let itemsHtml = '';
+
+
+
+
+        const name = document.getElementById('cust-name').value || 'Not provided';
+
+        const phone = document.getElementById('cust-phone').value || 'Not provided';
+
+        const date = document.getElementById('cust-date').value || 'Not provided';
+
+        const time = document.getElementById('cust-time').value || 'Not provided';
+
+        
+
+        customerInfoHtml = `<div class="mb-4 pb-2 border-gray-300" style="border-bottom-width: 1px !important;"><p style="margin:0;"><strong>Name:</strong> ${name} | <strong>Phone:</strong> ${phone}</p><p style="margin:0;"><strong>Pickup/Ship Date:</strong> ${date} | <strong>Time:</strong> ${time}</p></div>`;
+
+
+
+
+        let hasItems = false;
+
+
+
+
+        const getSimpleItems = (selector, suffix = "") => {
+
+            let items = [];
+
+            document.querySelectorAll(selector).forEach(input => {
+
+                if (input.value && parseInt(input.value) > 0) {
+
+                    let itemName = input.getAttribute('data-name') || input.getAttribute('data-flavor');
+
+                    if (suffix) itemName = `${itemName} ${suffix}`;
+
+                    items.push(`${input.value}x ${itemName}`);
+
+                }
+
+            });
+
+            return items;
+
+        };
+
+
+
+
+        if (document.getElementById('cat-pastries').checked) {
+
+            let pastryLines = [];
+
+            
+
+            pastryLines.push(...getSimpleItems('.item-qty')); 
+
+            pastryLines.push(...getSimpleItems('.donut-qty', 'Donut'));
+
+            pastryLines.push(...getSimpleItems('.turnover-qty', 'Turnover'));
+
+            pastryLines.push(...getSimpleItems('.scone-qty', 'Scone'));
+
+            pastryLines.push(...getSimpleItems('.muffin-qty', 'Banana Muffin'));
+
+            pastryLines.push(...getSimpleItems('.coffee-qty', 'Coffee Cake'));
+
+            pastryLines.push(...getSimpleItems('.cookie-qty', 'Cookie'));
+
+            pastryLines.push(...getSimpleItems('.minicookie-qty', 'Bag')); 
+
+
+
+
+            document.querySelectorAll('.cupcake-row').forEach(row => {
+
+                const qty = row.querySelector('.cc-qty').value;
+
+                const flav = row.querySelector('.cc-flavor').value;
+
+                const frost = row.querySelector('.cc-frosting').value;
+
+                const spr = row.querySelector('.cc-sprinkles').value;
+
+                if(qty && flav && frost) pastryLines.push(`${qty}x Cupcakes (${flav} Cake with ${frost} Frosting, ${spr})`);
+
+            });
+
+
+
+
+            document.querySelectorAll('.sc-row').forEach(row => {
+
+                const qty = row.querySelector('.cookie-batch-qty').value;
+
+                const frost = row.querySelector('.cookie-batch-frosting').value;
+
+                if(qty && frost) pastryLines.push(`${qty}x Sugar Cookies (${frost})`);
+
+            });
+
+            document.querySelectorAll('.dsc-row').forEach(row => {
+
+                const qty = row.querySelector('.cookie-batch-qty').value;
+
+                const frost = row.querySelector('.cookie-batch-frosting').value;
+
+                const notes = row.querySelector('.cookie-batch-notes').value;
+
+                if(qty && frost) pastryLines.push(`${qty}x Decorated Sugar Cookies (${frost}) - Design: "${notes}"`);
+
+            });
+
+
+
+
+            if (pastryLines.length > 0) {
+
+                hasItems = true;
+
+                itemsHtml += `<div><h4 class="font-bold text-[#852c51] mb-1" style="margin-top:0;">Pastries & Cookies</h4><ul class="list-disc pl-5" style="margin:0;">`;
+
+                pastryLines.forEach(l => itemsHtml += `<li>${l}</li>`);
+
+                itemsHtml += `</ul></div>`;
+
+            }
+
+        }
+
+
+
+
+        if (document.getElementById('cat-cakes').checked) {
+
+            let cakeLines = [];
+
+            document.querySelectorAll('.cake-instance').forEach((cake, index) => {
+
+                const size = cake.querySelector('.cake-size').value;
+
+                const flav = cake.querySelector('.cake-flavor').value;
+
+                const frost = cake.querySelector('.cake-frosting').value;
+
+                if (size && flav && frost) {
+
+                    let line = `<strong>Cake ${index+1}:</strong> ${size} ${flav} cake with ${frost}`;
+
+                    
+
+                    if(cake.querySelector('.cake-chk-compote').checked) line += ` | Compote: ${cake.querySelector('.cake-compote').value}`;
+
+                    if(cake.querySelector('.cake-chk-writing').checked) {
+
+                        let wText = cake.querySelector('.cake-writing-text').value;
+
+                        let wColor = cake.querySelector('.cake-writing-color').value;
+
+                        if(wColor.includes('Colored')) wColor = cake.querySelector('.cake-custom-color').value;
+
+                        line += ` | Writing: "${wText}" (${wColor})`;
+
+                    }
+
+                    if(cake.querySelector('.cake-chk-deco').checked) line += ` | Deco: "${cake.querySelector('.cake-deco-text').value}"`;
+
+                    
+
+                    cakeLines.push(line);
+
+                }
+
+            });
+
+
+
+
+            if (cakeLines.length > 0) {
+
+                hasItems = true;
+
+                itemsHtml += `<div class="mt-4"><h4 class="font-bold text-[#852c51] mb-1" style="margin-top:0;">Custom Cakes</h4><ul class="list-none space-y-2" style="margin:0;">`;
+
+                cakeLines.forEach(l => itemsHtml += `<li>${l}</li>`);
+
+                itemsHtml += `</ul></div>`;
+
+            }
+
+        }
+
+
+
+
+        if (document.getElementById('cat-breads').checked) {
+
+            let breadLines = [];
+
+            breadLines.push(...getSimpleItems('.loaf-qty'));
+
+            breadLines.push(...getSimpleItems('.bread-qty'));
+
+            
+
+            document.querySelectorAll('.bagel-row').forEach(row => {
+
+                const qty = row.querySelector('.bagel-batch-qty').value;
+
+                const flav = row.querySelector('.bagel-batch-flavor').value;
+
+                const spread = row.querySelector('.bagel-batch-spread').value;
+
+                if(qty && flav && spread) breadLines.push(`${qty}x ${flav} with ${spread}`);
+
+            });
+
+
+
+
+            if (breadLines.length > 0) {
+
+                hasItems = true;
+
+                itemsHtml += `<div class="mt-4"><h4 class="font-bold text-[#852c51] mb-1" style="margin-top:0;">Breads & Bagels</h4><ul class="list-disc pl-5" style="margin:0;">`;
+
+                breadLines.forEach(l => itemsHtml += `<li>${l}</li>`);
+
+                itemsHtml += `</ul></div>`;
+
+            }
+
+        }
+
+
+
+
+        if (!hasItems) itemsHtml += `<p class="text-red-500 italic" style="margin:0;">No items have been filled out with quantities yet.</p>`;
+
+
+
+
+        content.innerHTML = customerInfoHtml + `<div id="just-the-items">${itemsHtml}</div>`;
+
+        document.getElementById('full-order-details').value = document.getElementById('just-the-items').innerText.trim();
+
+        
+
+        return true;
+
+    }
+
+
+
+
+    window.onRecaptchaExpired = function() {
+
+        const captchaError = document.getElementById('captcha-error');
+
+        if (captchaError) {
+
+            captchaError.textContent = 'Your security check expired. Please check “I’m not a robot” again.';
+
+            captchaError.style.display = 'block';
+
+        }
+
+    };
+
+
+
+
+    function prepareAndSubmit() {
+
+        // Keep the existing honeypot check as an additional spam filter.
+
+        const honeypotVal = document.getElementById('spam-honeypot').value;
+
+        if (honeypotVal !== "") {
+
+            console.warn("Spam submission blocked.");
+
+            showSuccessScreen();
+
+            return;
+
+        }
+
+
+
+
+        const valid = generateReview();
+
+        if (!valid) return;
+
+        const captchaError = document.getElementById('captcha-error');
+
+        const captchaLoaded = typeof grecaptcha !== 'undefined';
+
+        const captchaToken = captchaLoaded ? grecaptcha.getResponse() : '';
+
+        if (!captchaToken) {
+
+            captchaError.textContent = captchaLoaded
+
+                ? 'Please check “I’m not a robot” before submitting your order.'
+
+                : 'Spam protection could not load. Please refresh the page and try again.';
+
+            captchaError.style.display = 'block';
+
+            captchaError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+            return;
+
+        }
+
+        captchaError.style.display = 'none';
+
+        const form = document.getElementById('orderForm');
+
+        const formData = new FormData(form);
+
+        formData.set('g-recaptcha-response', captchaToken);
+
+        const urlEncodedData = new URLSearchParams(formData).toString();
+
+
+
+
+        const btn = document.querySelector('button[onclick="prepareAndSubmit()"]');
+
+        btn.innerHTML = 'Sending...';
+
+        btn.disabled = true;
+
+
+
+
+        fetch(form.action, {
+
+            method: 'POST',
+
+            mode: 'no-cors',
+
+            headers: {
+
+                'Content-Type': 'application/x-www-form-urlencoded'
+
+            },
+
+            body: urlEncodedData
+
+        }).then(() => {
+
+            showSuccessScreen();
+
+        }).catch(error => {
+
+            alert("Something went wrong. Please refresh the page and try again.");
+
+            if (
+
+                typeof grecaptcha !== 'undefined' &&
+
+                document.querySelector('.g-recaptcha')
+
+            ) {
+
+                grecaptcha.reset();
+
+            }
+
+            btn.innerHTML = 'Submit Final Order <i class="fas fa-check-circle ml-2"></i>';
+
+            btn.disabled = false;
+
+        });
+
+    }
+
+
+
+
+    function showSuccessScreen() {
+
+        document.getElementById('bakery-form').innerHTML = `
+
+            <div class="p-12 text-center bg-white rounded-2xl shadow-xl border border-gray-100" style="border-width: 1px !important;">
+
+                <i class="fas fa-check-circle text-6xl text-[#4e8ea1] mb-6"></i>
+
+                <h2 class="text-3xl font-bold text-[#852c51] mb-4" style="margin-top:0;">Order Request Received!</h2>
+
+                <p class="text-lg text-gray-600 mb-2" style="margin:0;">Thank you for choosing Sweet Elizabeth's Organics.</p>
+
+                <p class="text-gray-600 mb-6" style="margin:0;">We will review your order and contact you within 2 business days.</p>
+
+                
+
+                <div class="bg-[#fdf2f0] border border-gray-200 p-4 rounded-lg text-sm text-[#852c51] text-left max-w-md mx-auto shadow-inner mt-6" style="border-width: 1px !important;">
+
+                    <strong style="display:block; margin-bottom:0.5rem;"><i class="fas fa-camera text-[#4e8ea1] mr-2"></i>Did you order a custom cake or decorated cookies?</strong>
+
+                    Please email your inspiration photos to <a href="mailto:sweetelizabethscolorado@gmail.com" class="text-[#4e8ea1] font-bold hover:underline">sweetelizabethscolorado@gmail.com</a> so we can match your vision!
+
+                </div>
+
+            </div>
+
+        `;
+
+    }
+
+
+
+
+    window.onload = () => {
+
+        // Log page load time into hidden input for bot-check
+
+        document.getElementById('form-load-time').value = Date.now();
+
+
+
+
+        // Block today and the next two full days for bakery preparation.
+
+        const dateInput = document.getElementById('cust-date');
+
+        if (dateInput) {
+
+            dateInput.min = formatISODate(getEarliestPickupDate());
+
+
+
+            const onPickupDateChange = () => applyPickupDateValidation(dateInput, true);
+
+            dateInput.addEventListener('input', onPickupDateChange);
+
+            dateInput.addEventListener('change', onPickupDateChange);
+
+            applyPickupDateValidation(dateInput, false);
+
+        }
+
+
+
+
+        addCakeBuilder();
+
+        addCupcakeBatch();
+
+        addBagelBatch();
+
+    };
+
+</script>
